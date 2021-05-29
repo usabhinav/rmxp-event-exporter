@@ -2,7 +2,7 @@
 # RMXP Event Exporter v1.4
 # by NettoHikari
 # 
-# October 29, 2020
+# May 29, 2021
 # 
 # This script exports all map events, common events, and battle events (not used
 # in Essentials) to a single text file. This is most useful when you need to
