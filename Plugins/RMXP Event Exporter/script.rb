@@ -15,8 +15,12 @@
 #-------------------------------------------------------------------------------
 # INSTALLATION
 #-------------------------------------------------------------------------------
-# Place this script somewhere between "Compiler" and "Main" (preferably just
-# directly before Main), and name it "Event Export".
+# If you are using Pokemon Essentials v19 or above, then copy this plugin's
+# folder (containing "meta.txt" and "script.rb") into your project's Plugins
+# folder.
+# 
+# Otherwise, place this script somewhere between "Compiler" and "Main"
+# (preferably just directly before Main), and name it "Event Export".
 # 
 #-------------------------------------------------------------------------------
 # SCRIPT USAGE
