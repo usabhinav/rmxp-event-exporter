@@ -1,8 +1,8 @@
 ################################################################################
-# RMXP Event Exporter v1.4
+# RMXP Event Exporter v1.4.1
 # by NettoHikari
 # 
-# May 29, 2021
+# August 3, 2021
 # 
 # This script exports all map events, common events, and battle events (not used
 # in Essentials) to a single text file. This is most useful when you need to
@@ -102,7 +102,7 @@ module EventExport
       f.write("#==============================================================================\n")
       for n in 1..999
         map_name = sprintf("Data/Map%03d.rxdata", n)
-	next if !File.exist?(map_name)
+		next if !File.exist?(map_name)
         map = load_data(map_name)
         f.write(sprintf("Map ID: %03d\n", n))
         f.write("Map Name: " + @@mapinfos[n].name + "\n")
@@ -124,7 +124,7 @@ module EventExport
         f.write("\n#------------------------------------------------------------------------------\n") if map.events.keys.length > 0
         @@events = map.events
         for i in map.events.keys.sort
-	  pbSetWindowText("Exporting map #{n} event #{i}") if defined?(pbSetWindowText)
+		  pbSetWindowText("Exporting map #{n} event #{i}") if defined?(pbSetWindowText)
           event = map.events[i]
           f.write(sprintf("Event ID: %03d\n", event.id))
           f.write("Event Name: " + event.name + "\n")
@@ -162,7 +162,7 @@ module EventExport
         f.write("Trigger: " + ["None", "Autorun", "Parallel"][@@common_events[i+1].trigger] + "\n")
         if @@common_events[i+1].trigger != 0
           switch_id = @@common_events[i+1].switch_id
-          f.write(sprintf("Condition switch: %04d: ", switch_id) + @@system.variables[switch_id] + "\n")
+          f.write(sprintf("Condition switch: %04d: ", switch_id) + @@system.switches[switch_id] + "\n")
         end
         f.write("\n")
         @@index = 0
